@@ -1,0 +1,150 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: Five的博客
+subtitle: Five-great
+description: 有事多研究 没事多琢磨
+keywords:
+author: LHL
+language: zh-CN
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+
+
+#github
+#url: https://five-great.github.io/
+#root: /
+
+
+
+#coding      
+url: https://five-great.coding.me
+#网站根目录。如果网站是放在子目录中，将root设置成'子目录名'
+root: /
+
+#文章链接地址格式 。即文章存放的目录。
+permalink: :title.html      
+#permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+#资源文件夹，放在里面的文件会上传到github中
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+#不需要渲染的文件夹或文件夹,放在[]中
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post  #默认布局模板是post，而不是draft和page
+titlecase: false  #是否将标题转换成标题形式（首字母大写）
+external_link: true #在新标签页面中打开网页
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight: 
+ # enable: true 代码高亮（改）
+   enable: false
+  #line_number: true
+ # auto_detect: false  
+  
+ # tab_replace:  
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+ #更新1
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css: 
+
+
+index_generator: 
+  path: ''
+  per_page: 9
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 9
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: hexo-theme-matery-five
+  #landscape
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy: 
+      #type: baidu_url_submitter
+     type: git
+     repository:
+         github: https://github.com/Five-great/Five-great.github.io.git,master 
+         coding: https://e.coding.net/fivecc/Fiveboke.git,master
+#更新1
+search:
+  path: search.xml
+  field: post
+  
+  #更新1
+permalink_pinyin: 
+  enable: true
+  separator: '-' # default: '-'
+  
+# Extensions
+## Plugins: http://hexo.io/plugins/
+#RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 200
+
+
+
+# Post wordcount display settings
+# Dependencies: https://github.com/willin/hexo-wordcount
+post_wordcount:
+  item_text: true
+  wordcount: true
+  min2read: true
+#
+baidu_url_submit:
+  count: 100 # 提交最新的一个链接
+  host:  five-great.coding.me # 在百度站长平台中注册的域名
+  token: 22dRxd3GlHWHVDrk # 请注意这是您的秘钥， 所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt # 文本文档的地址， 新链接会保存在此文本文档里
+#
